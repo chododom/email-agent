@@ -36,7 +36,7 @@ class Config(BaseSettings):
     index_name: str = "rag_index_deployment2"
     vector_dimensions: int = 384
     embedding_model_name: str = "intfloat/multilingual-e5-small"
-    retriever_k: int = 3
+    retriever_k: int = 1
     bucket_name: str = "vector-data-source-alza-email-agent"
 
     # model_config = SettingsConfigDict(env_file=".env")

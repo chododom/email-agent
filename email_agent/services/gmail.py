@@ -101,6 +101,12 @@ def _parse_headers(headers) -> EmailHeaders:
         if all(header_data.values()):
             break
 
+    if header_data["message_id"] is None:
+        header_data["message_id"] = ""
+        logger.warning(
+            f"Message from {header_data['sender']} has no message_id, will be skipped."
+        )  # Messages from the agent itself
+
     return EmailHeaders(**header_data)
 
 

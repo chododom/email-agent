@@ -26,15 +26,3 @@ run-docker tag="latest":
 push-ar tag="latest":
     docker build --platform linux/amd64 -t {{ARTIFACT_REGISTRY}}/{{NAME}}:{{tag}} .
     docker push {{ARTIFACT_REGISTRY}}/{{NAME}}:{{tag}}
-
-test-hook:
-    curl -X POST http://localhost:8080/v1/gmail-webhook \
-        -H "Content-Type: application/json" \
-        -d '{ \
-            "message": { \
-                "data": "ewogICJlbWFpbEFkZHJlc3MiOiAiYWx6YS5hZ2VudC5kb21pbmlrQGdtYWlsLmNvbSIsCiAgImhpc3RvcnlJZCI6ICIxOTUwIgp9", \
-                "messageId": "pubsub-123456789", \
-                "publishTime": "2025-12-07T00:00:00Z" \
-            }, \
-            "subscription": "projects/your-project-id/subscriptions/gmail-push-subscription" \
-        }'

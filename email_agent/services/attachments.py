@@ -110,8 +110,10 @@ def _extract_audio_text(data: bytes, mime: str) -> str:
 
         response = client.recognize(config=config, audio=audio)
 
-        # Get the most likely transcription
-        transcription = response.results[0].alternatives[0].transcript
+        # Get the most likely alternatives for each sentence
+        transcription = " ".join(
+            [res.alternatives[0].transcript for res in response.results]
+        )
         logger.info(f"Audio transcription: {transcription}")
 
         return transcription

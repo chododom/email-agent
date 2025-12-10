@@ -50,14 +50,19 @@ def get_multilingual_embeddings(chunks: List[str]) -> List[List[float]]:
     global embedding_model
 
     if embedding_model is None:
-        TextEmbedding.add_custom_model(
-            model=CFG.embedding_model_name,
-            pooling=PoolingType.MEAN,
-            normalization=True,
-            sources=ModelSource(hf=CFG.embedding_model_name),
-            dim=CFG.vector_dimensions,
-            model_file="onnx/model.onnx",
-        )
+        try:
+            TextEmbedding.add_custom_model(
+                model=CFG.embedding_model_name,
+                pooling=PoolingType.MEAN,
+                normalization=True,
+                sources=ModelSource(hf=CFG.embedding_model_name),
+                dim=CFG.vector_dimensions,
+                model_file="onnx/model.onnx",
+            )
+        except Exception:
+            logger.info(
+                f"Embedding model {CFG.embedding_model_name} already added to 'fastembed'."
+            )
 
         embedding_model = embedding_model = TextEmbedding(
             model_name=CFG.embedding_model_name
