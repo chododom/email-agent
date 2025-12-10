@@ -1,0 +1,55 @@
+# Python virtualenvs
+.venv
+venv/
+env/
+ENV/
+
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Editor/IDE
+.vscode/
+.idea/
+.DS_Store
+
+# Secrets and tokens (local only)
+client_secret.json
+client_secret2.json
+token.json
+token2.json
+.env
+*.pem
+*.key
+
+# Notebooks
+*.ipynb
+.ipynb_checkpoints/
+
+# Build / distribution
+build/
+dist/
+*.egg-info/
+
+# Terraform local state and vars
+.terraform/
+*.tfstate
+terraform.tfvars
+
+# Logs
+*.log
+logs/
+
+# Misc
+*.sqlite3
+*.swp
+node_modules/
+
+# Keep these: do NOT ignore `pyproject.toml`, `uv.lock`, or `email_agent/` because the Dockerfile copies them.

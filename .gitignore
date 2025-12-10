@@ -1,0 +1,18 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+.env
+**/.terraform/*
+.terraform.lock.hcl
+client_secret.json
+client_secret2.json
+token.json
+token2.json

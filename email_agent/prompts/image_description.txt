@@ -1,0 +1,6 @@
+Analyze this image. Describe the visual content clearly, then infer the most likely reason this image was attached to an email.
+Focus on identifying any text, products, documents, faces, or specific locations that could be relevant to a professional or personal exchange.
+If the image contains a document, summarize the main topic. If it's a photo, note the subject and mood.
+Output a concise, single paragraph summary (maximum 100 words) suitable for an AI email agent to understand the image's role.
+
+Image description:
